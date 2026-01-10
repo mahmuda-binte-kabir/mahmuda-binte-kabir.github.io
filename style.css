@@ -154,9 +154,10 @@ section {
 /* ABOUT – SEPARATE CARDS */
 .about-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: 1fr 1fr 1fr 1fr; /* 4 equal columns */
   gap: 28px;
 }
+
 
 .about-card {
   background: rgba(255, 255, 255, 0.03);
@@ -192,8 +193,12 @@ section {
 
 /* Mobile – stays one column naturally */
 @media (max-width: 768px) {
+  .about-grid {
+    grid-template-columns: 1fr; /* stack all cards */
+  }
+
   .about-main {
-    grid-column: 1 / -1;
+    grid-column: 1 / -1; /* still full width */
   }
 }
 
