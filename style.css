@@ -151,17 +151,52 @@ section {
 }
 
 /* ABOUT */
-.about-lead {
-  font-size:18px;
-  max-width:760px;
-  margin-bottom:50px;
+/* ABOUT – SEPARATE CARDS */
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 28px;
 }
 
-.about-grid {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:35px;
+.about-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 26px 22px;
 }
+
+.about-card h3 {
+  font-size: 17px;
+  margin-bottom: 12px;
+}
+
+.about-card p {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.65;
+  text-align: left;
+  word-break: normal;
+  white-space: normal;
+  hyphens: none;
+}
+
+
+/* About Me spans full width on desktop */
+.about-main {
+  grid-column: 1 / -1;
+}
+
+#about {
+  padding: 0;
+}
+
+/* Mobile – stays one column naturally */
+@media (max-width: 768px) {
+  .about-main {
+    grid-column: 1 / -1;
+  }
+}
+
 
 /* TAGS */
 .tag-row {
