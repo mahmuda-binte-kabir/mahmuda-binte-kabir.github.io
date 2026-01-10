@@ -364,123 +364,182 @@ html {
   scroll-behavior: smooth;
 }
 
-/* MOBILE */
-@media(max-width:768px) {
-  main { padding:140px 6% 100px; }
-  #hero h1 { font-size:44px; }
-}
-/* MOBILE STYLES FOR SCREENS <= 768px */
+
+
+/* ============================= */
+/* IMPROVED MOBILE EXPERIENCE */
+/* ============================= */
+
 @media (max-width: 768px) {
 
-  /* MAIN LAYOUT PADDING */
+  /* GLOBAL */
+  body {
+    font-size: 15px;
+  }
+
   main {
-    padding: 140px 6% 100px; /* reduce padding for smaller screens */
-    gap: 80px; /* reduce spacing between sections */
+    padding: 120px 5% 90px;
+    gap: 70px;
+  }
+
+  h2 {
+    font-size: 26px;
+    text-align: center;
+  }
+
+  /* NAV BAR */
+  .top-nav {
+    padding: 14px 5%;
+  }
+
+  .logo {
+    font-size: 26px;
+  }
+
+  .nav-links {
+    display: none; /* cleaner mobile – optional */
   }
 
   /* HERO */
   #hero h1 {
-    font-size: 44px;
-  }
-  .hero-subtitle {
-    font-size: 18px;
-  }
-  .hero-badge {
-    padding: 4px 14px;
-    font-size: 14px;
-  }
-  #hero .contact-icons {
-    font-size: 26px;
-    gap: 24px;
-  }
-  .hero-actions {
-    flex-direction: column;
-    gap: 12px;
+    font-size: 42px;
+    line-height: 1.1;
   }
 
-  /* ABOUT SECTION */
-  .about-lead {
-    font-size: 18px; /* smaller font */
+  .hero-subtitle {
+    font-size: 16px;
+    margin-top: 10px;
+  }
+
+  #hero .contact-icons {
+    font-size: 24px;
+    gap: 22px;
+    margin: 28px 0;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .primary-btn,
+  .ghost-btn {
+    width: 100%;
+    max-width: 260px;
+    margin: 0 auto;
     text-align: center;
-    max-width: 100%;
-    margin-bottom: 30px;
   }
+
+  /* SECTION CARD */
+  .section-card {
+    padding: 36px 24px;
+    border-radius: 18px;
+  }
+
+  /* ABOUT */
+  .about-lead {
+    font-size: 15px;
+    text-align: center;
+    margin-bottom: 28px;
+  }
+
   .about-grid {
-    grid-template-columns: 1fr; /* stack cards vertically */
-    gap: 20px;
+    grid-template-columns: 1fr;
+    gap: 18px;
+    text-align: center;
   }
-  .tag-row {
-    justify-content: center;
+
+  .about-grid h3 {
+    font-size: 16px;
   }
 
   /* TIMELINE */
-  .timeline {
-    padding-left: 20px;
+  .timeline::before {
+    left: 6px;
   }
+
   .timeline-item {
-    padding-left: 30px;
-    margin-bottom: 30px;
+    padding-left: 28px;
+    margin-bottom: 26px;
   }
+
   .timeline-dot {
     width: 12px;
     height: 12px;
   }
 
-  
+  .timeline h3 {
+    font-size: 15px;
+  }
 
+  .timeline p,
+  .timeline small {
+    font-size: 13px;
+  }
+
+  /* PROJECTS */
+  .project-card {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .project-card h3 {
+    font-size: 16px;
+  }
+
+  .project-content p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .project-card img {
+    max-width: 100%;
+    margin-top: 16px;
+  }
 
   /* CERTIFICATIONS */
   .cert-grid {
-    grid-template-columns: 1fr; /* stack cert cards vertically */
-    gap: 20px;
-    justify-items: center;
+    grid-template-columns: 1fr;
+    gap: 18px;
   }
+
   .cert-card {
-    padding: 24px 18px;
+    padding: 22px 18px;
   }
-  .cert-card i {
-    font-size: 28px;
+
+  .cert-card h3 {
+    font-size: 15px;
+  }
+
+  .cert-card .issuer,
+  .cert-card .verify {
+    font-size: 12px;
   }
 
   /* CONTACT */
+  .contact-section h2 {
+    font-size: 24px;
+  }
+
   .contact-lead {
-    font-size: 16px;
-    margin-bottom: 30px;
+    font-size: 14px;
+    margin-bottom: 24px;
   }
+
   .contact-cards {
-    flex-direction: column;
-    gap: 20px;
+    gap: 16px;
   }
+
   .contact-card {
-    width: 100%;
-    max-width: 300px;
-    margin: 0 auto;
+    max-width: 280px;
+    padding: 22px;
   }
 
-  /* NAVIGATION */
-  .top-nav {
-    padding: 15px 6%;
-  }
-  .top-nav a {
-    margin-left: 14px;
-    font-size: 14px;
-  }
-
-  /* BUTTONS */
-  .primary-btn, .ghost-btn, .cert-btn {
-    padding: 12px 24px;
-    font-size: 14px;
+  .contact-location {
+    font-size: 13px;
+    opacity: 0.85;
   }
 }
 
-@media (max-width: 768px) {
-  .project-card {
-    width: 100%;           /* take full width of container */
-    max-width: 320px;      /* limit the maximum width */
-    margin: 0 auto 20px;   /* center the card and add spacing below */
-  }
 
-  .project-content {
-    max-height: 500px;     /* adjust expanded content */
-  }
-}
