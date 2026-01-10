@@ -150,65 +150,92 @@ section {
   box-shadow:0 0 50px rgba(108,242,255,.08);
 }
 
-/* ========================= */
-/*        ABOUT SECTION      */
-/* ========================= */
+/* About section wrapper */
+.about-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;          /* space between main card and grid row */
+}
 
+/* Full width main About Me card */
+.about-main-card {
+  background: var(--glass);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 40px 32px;
+  backdrop-filter: blur(10px);
+  text-align: left;
+}
+
+.about-main-card h3 {
+  font-size: 17px;
+  margin-bottom: 8px;
+  color: var(--text);
+}
+
+.about-main-card p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+/* Grid for the 3 smaller cards - full width */
 .about-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* FORCE full-width 4-column desktop layout */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 28px;
 }
 
-/* About Me spans all 4 */
-.about-main {
-  grid-column: 1 / -1;
-}
-
-/* Unified card look */
+/* Smaller cards style (same glass effect) */
 .about-card {
-  background: var(--glass); /* match your section-card transparency */
+  background: var(--glass);
   border: 1px solid var(--border);
   border-radius: 22px;
-  padding: 34px 26px;
+  padding: 32px 26px;
   backdrop-filter: blur(10px);
+  text-align: left;
 }
 
-/* Titles */
 .about-card h3 {
   font-size: 18px;
   margin-bottom: 14px;
   color: var(--text);
 }
 
-/* Paragraphs */
 .about-card p {
   font-size: 15px;
   color: var(--muted);
-  line-height: 1.7;
-  text-align: left;
-  word-break: normal;
-  white-space: normal;
-  hyphens: none;
+  line-height: 1.65;
+  margin: 6px 0;
 }
 
-/* MOBILE FIX: stack all cards */
+/* ────────────────────────────────────────────── */
+/*               Mobile adjustments               */
+/* ────────────────────────────────────────────── */
+
 @media (max-width: 768px) {
-  .about-grid {
-    grid-template-columns: 1fr;
-    gap: 18px;
+  .about-container {
+    gap: 32px;
   }
 
-  .about-main {
-    grid-column: 1 / -1;
+  .about-main-card {
+    padding: 32px 24px;
+  }
+
+  .about-main-card h3 {
+    font-size: 20px;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
   }
 
   .about-card {
-    text-align: center;
-    padding: 26px 20px;
+    padding: 28px 22px;
+    text-align: center; /* optional: looks cleaner on mobile */
   }
 }
-
 
 
 /* TAGS */
