@@ -221,6 +221,7 @@ section {
 
   .about-main-card {
     padding: 32px 24px;
+    text-align: center;
   }
 
   .about-main-card h3 {
