@@ -150,57 +150,65 @@ section {
   box-shadow:0 0 50px rgba(108,242,255,.08);
 }
 
-/* ABOUT */
-/* ABOUT – SEPARATE CARDS */
+/* ========================= */
+/*        ABOUT SECTION      */
+/* ========================= */
+
 .about-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr; /* 4 equal columns */
+  grid-template-columns: repeat(4, 1fr); /* FORCE full-width 4-column desktop layout */
   gap: 28px;
 }
 
+/* About Me spans all 4 */
+.about-main {
+  grid-column: 1 / -1;
+}
 
+/* Unified card look */
 .about-card {
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--glass); /* match your section-card transparency */
   border: 1px solid var(--border);
-  border-radius: 20px;
-  padding: 26px 22px;
+  border-radius: 22px;
+  padding: 34px 26px;
+  backdrop-filter: blur(10px);
 }
 
+/* Titles */
 .about-card h3 {
-  font-size: 17px;
-  margin-bottom: 12px;
+  font-size: 18px;
+  margin-bottom: 14px;
+  color: var(--text);
 }
 
+/* Paragraphs */
 .about-card p {
-  font-size: 14px;
+  font-size: 15px;
   color: var(--muted);
-  line-height: 1.65;
+  line-height: 1.7;
   text-align: left;
   word-break: normal;
   white-space: normal;
   hyphens: none;
 }
 
-
-/* About Me spans full width on desktop */
-.about-main {
-  grid-column: 1 / -1;
-}
-
-#about {
-  padding: 0;
-}
-
-/* Mobile – stays one column naturally */
+/* MOBILE FIX: stack all cards */
 @media (max-width: 768px) {
   .about-grid {
-    grid-template-columns: 1fr; /* stack all cards */
+    grid-template-columns: 1fr;
+    gap: 18px;
   }
 
   .about-main {
-    grid-column: 1 / -1; /* still full width */
+    grid-column: 1 / -1;
+  }
+
+  .about-card {
+    text-align: center;
+    padding: 26px 20px;
   }
 }
+
 
 
 /* TAGS */
